@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "id": "toknotch",
+      "bundleID": "com.reffwu.toknotch",
+      "name": "TokNotch",
+      "icon": "https://reffwu.github.io/apps/icons/toknotch.png",
+      "page": "https://reffwu.github.io/apps/toknotch/",
+      "tagline": {
+        "en": "How many times over has each AI plan paid for itself?",
+        "zh-Hans": "你的每个 AI 套餐，到底回本了几倍？",
+        "zh-Hant": "你的每個 AI 方案，到底回本了幾倍？",
+        "ja": "その AI プラン、何倍の元が取れていますか？",
+        "ko": "내 AI 요금제, 몇 배나 본전을 뽑았을까?",
+        "de": "Wie oft hat sich jedes deiner KI-Abos schon amortisiert?",
+        "fr": "Combien de fois chaque abonnement IA s’est-il rentabilisé ?",
+        "es": "¿Cuántas veces se ha amortizado cada suscripción de IA?",
+        "it": "Quante volte si è ripagato ogni tuo piano IA?",
+        "pt-BR": "Quantas vezes cada plano de IA já se pagou?",
+        "nl": "Hoe vaak heeft elk AI-abonnement zich al terugverdiend?",
+        "pl": "Ile razy zwrócił się każdy Twój plan AI?",
+        "ru": "Во сколько раз окупилась каждая ваша подписка на ИИ?",
+        "tr": "Her yapay zekâ planınız kendini kaç kez amorti etti?",
+        "vi": "Mỗi gói AI của bạn đã hoàn vốn bao nhiêu lần?",
+        "ar": "كم مرة استردّت كل خطة ذكاء اصطناعي تكلفتها؟"
+      }
+    },
+    {
+      "id": "softfold",
+      "bundleID": "com.reffwu.softfold",
+      "name": "Softfold",
+      "icon": "https://reffwu.github.io/apps/icons/softfold.png",
+      "page": "https://reffwu.github.io/apps/softfold/",
+      "tagline": {
+        "en": "Close the lid, and your desktop folds away softly.",
+        "zh-Hans": "合上屏幕，桌面温柔地折叠起来。",
+        "zh-Hant": "闔上螢幕，桌面溫柔地摺疊起來。",
+        "ja": "ふたを閉じると、デスクトップがやわらかく折りたたまれる。",
+        "ko": "덮개를 닫으면, 데스크톱이 부드럽게 접힙니다.",
+        "de": "Klapp den Deckel zu, und dein Schreibtisch faltet sich sanft zusammen.",
+        "fr": "Refermez l’écran, et votre bureau se replie en douceur.",
+        "es": "Cierra la tapa y tu escritorio se pliega con suavidad.",
+        "it": "Chiudi lo schermo e la tua scrivania si ripiega dolcemente.",
+        "pt-BR": "Feche a tampa e sua mesa se dobra suavemente.",
+        "nl": "Klap het scherm dicht en je bureaublad vouwt zacht weg.",
+        "pl": "Zamknij pokrywę, a biurko łagodnie się złoży.",
+        "ru": "Закройте крышку, и рабочий стол мягко сложится.",
+        "tr": "Kapağı kapatın, masaüstünüz yumuşakça katlansın.",
+        "vi": "Gập màn hình lại, màn hình nền nhẹ nhàng gấp lại theo.",
+        "ar": "أغلق الغطاء، فينطوي سطح المكتب بلطف."
+      }
+    }
+  ]
+}
