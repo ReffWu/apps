@@ -1,5 +1,5 @@
 const video = document.querySelector('.shot video.motion');
-const LANGS = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko'];
+const LANGS = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'fr', 'es', 'it', 'tr', 'pl', 'nl'];
 const scheme = matchMedia('(prefers-color-scheme: dark)');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let shown = '';
