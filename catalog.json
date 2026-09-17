@@ -50,6 +50,31 @@
         "vi": "Gập màn hình lại, màn hình nền nhẹ nhàng gấp lại theo.",
         "ar": "أغلق الغطاء، فينطوي سطح المكتب بلطف."
       }
+    },
+    {
+      "id": "statustrio",
+      "bundleID": "com.lingsmbp.StatusTrio",
+      "name": "Status Trio",
+      "icon": "https://reffwu.github.io/apps/icons/statustrio.png",
+      "page": "https://github.com/lingyired/status-trio",
+      "tagline": {
+        "en": "Three system stats in one ring. Open source by lingyired, core contribution by Reff.",
+        "zh-Hans": "三合一菜单栏状态环。开源精选（lingyired 原创，Reff 深度参与贡献）",
+        "zh-Hant": "三合一功能表列狀態環。開源精選（lingyired 原創，Reff 深度參與貢獻）",
+        "ja": "メニューバーに3つの状態をひとつに。lingyired 原作、Reff 開発協力。",
+        "ko": "메뉴 막대에 3가지 시스템 상태를 하나로. lingyired 원작, Reff 핵심 기여.",
+        "de": "Drei Systemstatus in einem Menüleisten-Symbol. Open Source von lingyired, Co-Autor Reff.",
+        "fr": "Trois états système dans la barre des menus. Open source par lingyired, contribution par Reff.",
+        "es": "Tres estados del sistema en un solo icono. Código abierto de lingyired, contribución de Reff.",
+        "it": "Tre stati di sistema nella barra dei menu. Open source di lingyired, contributo di Reff.",
+        "pt-BR": "Três status do sistema na barra de menus. Código aberto de lingyired, contribuição de Reff.",
+        "nl": "Drie systeemstatussen in één menubalkicoon. Open source van lingyired, bijdrage door Reff.",
+        "pl": "Trzy stany systemu na pasku menu. Open source od lingyired, współtwórca Reff.",
+        "ru": "Три состояния системы в одном значке меню. Open source от lingyired, вклад Reff.",
+        "tr": "Menü çubuğunda üç sistem durumu bir arada. lingyired açık kaynak, Reff katkısı.",
+        "vi": "Ba trạng thái hệ thống trong một biểu tượng menu. Mã nguồn mở của lingyired, đóng góp bởi Reff.",
+        "ar": "ثلاث حالات للنظام في شريط القوائم. مفتوح المصدر بواسطة lingyired ومساهمة Reff."
+      }
     }
   ]
 }
