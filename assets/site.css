@@ -40,13 +40,23 @@ nav {
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--line);
 }
-nav .shell { height: 52px; display: flex; align-items: center; justify-content: space-between; }
+nav .shell {
+  position: relative;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .brand { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
 .lang {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   appearance: none; -webkit-appearance: none;
   font: inherit; font-size: 13px; color: var(--dim);
+  text-align: center; text-align-last: center;
   background: transparent; border: 1px solid var(--line); border-radius: 999px;
-  padding: 5px 12px; cursor: pointer;
+  padding: 5px 14px; cursor: pointer;
 }
 
 .hero { text-align: center; padding: 72px 0 28px; }
