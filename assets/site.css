@@ -56,16 +56,51 @@ nav .shell { height: 52px; display: flex; align-items: center; justify-content: 
 .hero .tagline { font-size: clamp(21px, 3.2vw, 28px); font-weight: 600; letter-spacing: -0.015em; margin-top: 10px; }
 .hero .lede { color: var(--dim); max-width: 640px; margin: 14px auto 0; font-size: 19px; }
 .cta { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.cta-row { display: inline-flex; align-items: center; justify-content: center; gap: 12px; }
 .download {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 56px;
   background: var(--button); color: var(--button-text);
   font-size: 19px; font-weight: 600; letter-spacing: -0.01em;
-  padding: 15px 30px; border-radius: 999px;
+  padding: 0 32px; border-radius: 999px;
   transition: transform 0.12s ease, opacity 0.15s ease;
+  white-space: nowrap;
 }
 .download:hover { opacity: 0.88; }
 .download:active { transform: scale(0.98); }
-.download svg { width: 20px; height: 20px; }
+.download svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+.github-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button);
+  color: var(--button-text);
+  flex-shrink: 0;
+  transition: transform 0.12s ease, opacity 0.15s ease;
+}
+.github-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.github-btn:active { transform: scale(0.96); }
+.github-btn svg { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+
+@media (max-width: 500px) {
+  .download {
+    height: 52px;
+    font-size: 17px;
+    padding: 0 22px;
+  }
+  .github-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .github-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
 .fine { color: var(--faint); font-size: 14px; }
 
 .shot { margin: 44px auto 0; max-width: 1080px; }
