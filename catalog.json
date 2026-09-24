@@ -1,11 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "apps": [
     {
       "id": "toknotch",
       "bundleID": "com.reffwu.toknotch",
       "name": "TokNotch",
-      "icon": "https://reffwu.github.io/apps/icons/toknotch.png",
+      "icon": "https://reffwu.github.io/apps/icons/toknotch.png?v=2",
       "page": "https://reffwu.github.io/apps/toknotch/",
       "tagline": {
         "en": "How many times over has each AI plan paid for itself?",
@@ -30,7 +30,7 @@
       "id": "softfold",
       "bundleID": "com.reffwu.softfold",
       "name": "Softfold",
-      "icon": "https://reffwu.github.io/apps/icons/softfold.png",
+      "icon": "https://reffwu.github.io/apps/icons/softfold.png?v=2",
       "page": "https://reffwu.github.io/apps/softfold/",
       "tagline": {
         "en": "Close the lid, and your desktop folds away softly.",
@@ -55,7 +55,7 @@
       "id": "squeeze",
       "bundleID": "com.reffwu.squeeze",
       "name": "Squeeze",
-      "icon": "https://reffwu.github.io/apps/icons/squeeze.png",
+      "icon": "https://reffwu.github.io/apps/icons/squeeze.png?v=2",
       "page": "https://reffwu.github.io/apps/squeeze/",
       "tagline": {
         "en": "Zero-loss extreme video compressor for macOS.",
