@@ -52,6 +52,31 @@
       }
     },
     {
+      "id": "squeeze",
+      "bundleID": "com.reffwu.squeeze",
+      "name": "Squeeze",
+      "icon": "https://reffwu.github.io/apps/icons/squeeze.png",
+      "page": "https://reffwu.github.io/apps/squeeze/",
+      "tagline": {
+        "en": "Zero-loss extreme video compressor for macOS.",
+        "zh-Hans": "画质几乎零损失的 macOS 极致视频压缩工具。",
+        "zh-Hant": "畫質幾乎零損失的 macOS 極致影片壓縮工具。",
+        "ja": "画質をほぼ損なわない、macOS向け究極の動画圧縮ツール。",
+        "ko": "화질 손실 없이 파일 크기를 획기적으로 줄이는 macOS 동영상 압축 도구.",
+        "de": "Nahezu verlustfreier, extremer Videokompressor für macOS.",
+        "fr": "Compresseur vidéo extrême et sans perte visible pour macOS.",
+        "es": "Compresor de video extremo y sin pérdida perceptible para macOS.",
+        "it": "Compressore video estremo a perdita zero per macOS.",
+        "pt-BR": "Compressor de vídeo extremo e sem perda perceptível para macOS.",
+        "nl": "Vrijwel verliesvrije, extreme videocompressor voor macOS.",
+        "pl": "Ekstremalny kompresor wideo bez widocznej utraty jakości dla macOS.",
+        "ru": "Экстремальный видеокомпрессор для macOS практически без потери качества.",
+        "tr": "macOS için neredeyse sıfır kayıplı ultra video sıkıştırıcı.",
+        "vi": "Công cụ nén video cực đỉnh gần như không giảm chất lượng cho macOS.",
+        "ar": "أداة ضغط فيديو فائقة ومتقنة دون فقدان ملحوظ للجودة لنظام macOS."
+      }
+    },
+    {
       "id": "statustrio",
       "bundleID": "com.lingsmbp.StatusTrio",
       "name": "Status Trio",
