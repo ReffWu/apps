@@ -77,20 +77,27 @@ nav .shell { height: 52px; display: flex; align-items: center; justify-content: 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--button);
-  color: var(--button-text);
+  background: #000000;
+  color: #ffffff;
   flex-shrink: 0;
   transition: transform 0.12s ease, opacity 0.15s ease;
+  text-decoration: none;
 }
-.github-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.github-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 .github-btn:active { transform: scale(0.96); }
-.github-btn svg { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+.github-btn svg { width: 24px; height: 24px; display: block; flex-shrink: 0; fill: currentColor; }
+
+@media (prefers-color-scheme: dark) {
+  .github-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
 
 @media (max-width: 500px) {
   .download {
     height: 52px;
     font-size: 17px;
-    padding: 0 22px;
+    padding: 0 20px;
   }
   .github-btn {
     width: 52px;
