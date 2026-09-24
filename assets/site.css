@@ -70,6 +70,42 @@ nav .shell { height: 52px; display: flex; align-items: center; justify-content: 
 
 .shot { margin: 44px auto 0; max-width: 1080px; }
 .shot img { width: 100%; height: auto; display: block; }
+.shot-dual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 900px;
+  margin: 44px auto 0;
+}
+.shot-dual img {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  display: block;
+  flex: 1 1 0;
+  border-radius: 12px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.14));
+}
+@media (prefers-color-scheme: dark) {
+  .shot-dual img {
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+  }
+}
+@media (max-width: 760px) {
+  .shot-dual {
+    margin-top: 28px;
+    gap: 0;
+  }
+  .shot-dual .shot-settings {
+    display: none;
+  }
+  .shot-dual .shot-main {
+    max-width: 310px;
+    width: 82%;
+    margin: 0 auto;
+  }
+}
 .shot video { width: 100%; aspect-ratio: 1920 / 924; display: block;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent), linear-gradient(transparent, #000 3%, #000 97%, transparent);
   -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent), linear-gradient(transparent, #000 3%, #000 97%, transparent);
