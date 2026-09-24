@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Squeeze</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Thu, 24 Sep 2026 14:23:08 -0400</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://reffwu.github.io/apps/squeeze/Squeeze.dmg" length="1957759" type="application/octet-stream" sparkle:edSignature="gTeESATfele3/q8LkfBUma/c6pwhLVtbNs1MB9MQoo/IdviUJrkN0oI0lxH8xEksDoAlNZRvxI/5WwvpFD+6Aw=="/>
+        </item>
+    </channel>
+</rss>
