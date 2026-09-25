@@ -64,7 +64,11 @@
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const entry = strings[el.dataset.i18n];
-      if (entry) el.textContent = entry[lang] || entry.en;
+      if (entry) {
+        const val = entry[lang] || entry.en;
+        el.textContent = val;
+        if (el.hasAttribute("title")) el.setAttribute("title", val);
+      }
     });
     document.querySelectorAll("[data-hero]").forEach(img => {
       img.src = `${img.dataset.hero}-${["en", "zh-Hans", "zh-Hant", "ja", "ko"].includes(lang) ? lang : "en"}.webp`;
