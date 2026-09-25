@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecosystem Dashboard · Mac Apps by Reff Wu</title>
+<meta name="description" content="Live telemetry, real-time downloads, and active user metrics across Reff Wu's macOS apps.">
+<link rel="icon" href="../icons/toknotch.png">
+<link rel="stylesheet" href="../assets/site.css">
+<script>
+window.PAGE_STRINGS = {
+  "page.title": {
+    "en": "Ecosystem Dashboard · Mac Apps by Reff Wu",
+    "zh-Hans": "生态全景大屏 · Reff Wu 的 Mac Apps",
+    "zh-Hant": "生態全景看板 · Reff Wu 的 Mac Apps",
+    "ja": "エコシステムダッシュボード · Reff Wu の Mac App",
+    "ko": "에코시스템 대시보드 · Reff Wu의 Mac 앱"
+  },
+  "dash.badge": {
+    "en": "Ecosystem Telemetry · Real-time",
+    "zh-Hans": "全生态实时遥测 · 监控中枢",
+    "zh-Hant": "全生態即時遙測 · 監控中樞",
+    "ja": "リアルタイムテレメトリ · 監視センター",
+    "ko": "실시간 텔레메트리 · 모니터링 센터"
+  },
+  "dash.title": {
+    "en": "macOS Apps Live Telemetry",
+    "zh-Hans": "macOS Apps 实时遥测大屏",
+    "zh-Hant": "macOS Apps 即時遙測看板",
+    "ja": "macOS App リアルタイムダッシュボード",
+    "ko": "macOS 앱 실시간 텔레메트리 대시보드"
+  },
+  "dash.sub": {
+    "en": "Aggregating GitHub Releases downloads and Cloudflare D1 privacy-first edge telemetry. Synced every 5 minutes.",
+    "zh-Hans": "实时聚合 GitHub Releases 真实下载量与 Cloudflare D1 边缘匿名活跃统计。数据每 5 分钟自动同步。",
+    "zh-Hant": "即時聚合 GitHub Releases 完整下載量與 Cloudflare D1 邊緣匿名活躍統計。每 5 分鐘自動同步。",
+    "ja": "GitHub Releases の実ダウンロード数と Cloudflare D1 匿名アクティブ指標をリアルタイム集計。5分ごとに自動更新。",
+    "ko": "GitHub Releases 다운로드 수와 Cloudflare D1 익명 활성 지표를 실시간 집계. 5분마다 자동 동기화."
+  },
+  "dash.online": {
+    "en": "Cloudflare Edge Hub · Operational",
+    "zh-Hans": "Cloudflare 边缘中枢 · 运行正常",
+    "zh-Hant": "Cloudflare 邊緣中樞 · 運作正常",
+    "ja": "Cloudflare エッジハブ · 正常稼働",
+    "ko": "Cloudflare 엣지 허브 · 정상 작동"
+  },
+  "dash.synced": {
+    "en": "Last synced:",
+    "zh-Hans": "最后同步时间:",
+    "zh-Hant": "最後同步時間:",
+    "ja": "最終更新:",
+    "ko": "마지막 동기화:"
+  },
+  "dash.refresh": {
+    "en": "Refresh",
+    "zh-Hans": "刷新数据",
+    "zh-Hant": "重新整理",
+    "ja": "更新",
+    "ko": "새로고침"
+  },
+  "kpi.downloads": {
+    "en": "Total Downloads",
+    "zh-Hans": "全生态总下载量",
+    "zh-Hant": "全生態總下載量",
+    "ja": "累計ダウンロード",
+    "ko": "총 다운로드 수"
+  },
+  "kpi.downloads_hint": {
+    "en": "Direct GitHub Release DMG downloads",
+    "zh-Hans": "GitHub Releases 官方 DMG 真实下载量",
+    "zh-Hant": "GitHub Releases 官方 DMG 完整下載量",
+    "ja": "GitHub Releases からの公式 DMG 実ダウンロード",
+    "ko": "GitHub Releases 공식 DMG 실제 다운로드"
+  },
+  "kpi.dau": {
+    "en": "Active Today (DAU)",
+    "zh-Hans": "今日活跃设备 (DAU)",
+    "zh-Hant": "今日活躍裝置 (DAU)",
+    "ja": "本日アクティブ (DAU)",
+    "ko": "오늘 활성 기기 (DAU)"
+  },
+  "kpi.dau_hint": {
+    "en": "Active macOS clients in the last 24 hours",
+    "zh-Hans": "过去 24 小时活跃启动的 macOS 客户端",
+    "zh-Hant": "過去 24 小時活躍啟動的 macOS 用戶端",
+    "ja": "過去24時間以内に起動された Mac",
+    "ko": "최근 24시간 내 실행된 macOS 기기"
+  },
+  "kpi.mau": {
+    "en": "Monthly Active (MAU)",
+    "zh-Hans": "30天活跃用户 (MAU)",
+    "zh-Hant": "30天活躍用戶 (MAU)",
+    "ja": "月間アクティブ (MAU)",
+    "ko": "월간 활성 사용자 (MAU)"
+  },
+  "kpi.mau_hint": {
+    "en": "Deduplicated devices over past 30 days",
+    "zh-Hans": "过去 30 天去重活跃设备规模",
+    "zh-Hant": "過去 30 天去重活躍裝置總數",
+    "ja": "過去30日間の重複除外アクティブ Mac",
+    "ko": "최근 30일간 중복 제거된 활성 기기"
+  },
+  "app.dau": {
+    "en": "Today (DAU)",
+    "zh-Hans": "今日活跃 (DAU)",
+    "zh-Hant": "今日活躍 (DAU)",
+    "ja": "本日 (DAU)",
+    "ko": "오늘 (DAU)"
+  },
+  "app.wau": {
+    "en": "7-Day (WAU)",
+    "zh-Hans": "7日活跃 (WAU)",
+    "zh-Hant": "7日活躍 (WAU)",
+    "ja": "7日間 (WAU)",
+    "ko": "7일 (WAU)"
+  },
+  "app.mau": {
+    "en": "30-Day (MAU)",
+    "zh-Hans": "30日活跃 (MAU)",
+    "zh-Hant": "30日活躍 (MAU)",
+    "ja": "30日間 (MAU)",
+    "ko": "30일 (MAU)"
+  },
+  "app.downloads": {
+    "en": "Downloads",
+    "zh-Hans": "累计下载",
+    "zh-Hant": "累計下載",
+    "ja": "ダウンロード数",
+    "ko": "다운로드 수"
+  },
+  "app.btn_web": {
+    "en": "Website",
+    "zh-Hans": "官网主页",
+    "zh-Hant": "官網首頁",
+    "ja": "公式サイト",
+    "ko": "웹사이트"
+  },
+  "app.btn_download": {
+    "en": "Download",
+    "zh-Hans": "下载 DMG",
+    "zh-Hant": "下載 DMG",
+    "ja": "DMG 入手",
+    "ko": "DMG 받기"
+  },
+  "app.btn_github": {
+    "en": "Source",
+    "zh-Hans": "GitHub 源码",
+    "zh-Hant": "GitHub 原始碼",
+    "ja": "GitHub ソース",
+    "ko": "GitHub 소스"
+  },
+  "privacy.title": {
+    "en": "Privacy by Design · Apple HIG & European GDPR Strict Compliance",
+    "zh-Hans": "原生隐私设计 · 严格遵守 Apple HIG 与无追踪准则",
+    "zh-Hant": "原生隱私設計 · 嚴格遵守 Apple HIG 與無追蹤準則",
+    "ja": "プライバシー・バイ・デザイン · Apple HIG 完全準拠",
+    "ko": "프라이버시 중심 설계 · Apple HIG 원칙 철저 준수"
+  },
+  "privacy.body": {
+    "en": "Zero IP persistence. Daily rotated cryptographic salt. No telemetry cookies or personal identifiers. Every macOS app is signed and notarized by Apple with full user consent controls in Settings.",
+    "zh-Hans": "零 IP 存储记录、每日轮换密码学哈希加盐。绝无任何追踪 Cookie 或个人身份指纹。全系列 macOS App 经 Apple 官方公证，并提供随时关闭遥测的偏好设置选项。",
+    "zh-Hant": "零 IP 儲存紀錄、每日輪換密碼學雜湊加鹽。絕無任何追蹤 Cookie 或個人身分指紋。全系列 macOS App 經 Apple 官方公證，並提供隨時關閉遙測的偏好設定選項。",
+    "ja": "IPアドレスは一切保存せず、日替わりの暗号化ソルトを使用。Cookieや端末指紋による追跡は皆無です。全MacアプリはAppleにより公証済みで、設定画面からいつでも無効化できます。",
+    "ko": "IP 주소는 절대 저장하지 않으며 매일 순환되는 암호화 솔트를 적용합니다. 쿠키나 기기 지문 추적을 일절 사용하지 않습니다. 모든 Mac 앱은 Apple 공증을 완료했으며 설정에서 언제든 원클릭으로 끌 수 있습니다."
+  }
+};
+</script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body data-page="dashboard" data-root="../">
+<nav>
+  <div class="shell">
+    <a class="brand" href="../">Reff Wu</a>
+    <select class="lang" aria-label="Language"></select>
+  </div>
+</nav>
+
+<main class="shell">
+  <header class="dash-header">
+    <div class="dash-pill-tag">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span data-i18n="dash.badge">Ecosystem Telemetry · Real-time</span>
+    </div>
+    <h1 data-i18n="dash.title">macOS Apps Live Telemetry</h1>
+    <p data-i18n="dash.sub">Aggregating GitHub Releases downloads and Cloudflare D1 privacy-first edge telemetry. Synced every 5 minutes.</p>
+  </header>
+
+  <section class="dash-sync-bar">
+    <div class="dash-sync-status">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span data-i18n="dash.online">Cloudflare Edge Hub · Operational</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span style="font-size: 12px; color: var(--faint);"><span data-i18n="dash.synced">Last synced:</span> <strong id="sync-time">Just now</strong></span>
+      <button class="dash-refresh-btn" id="refresh-btn" type="button" aria-label="Refresh telemetry data">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+        </svg>
+        <span data-i18n="dash.refresh">Refresh</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- KPI Overview Cards -->
+  <section class="kpi-row">
+    <div class="kpi-card">
+      <div class="kpi-label">
+        <span data-i18n="kpi.downloads">Total Downloads</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </div>
+      <div class="kpi-value" id="kpi-total-dl">31,960+</div>
+      <div class="kpi-hint" data-i18n="kpi.downloads_hint">Direct GitHub Release DMG downloads</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        <span data-i18n="kpi.dau">Active Today (DAU)</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="kpi-value" id="kpi-dau" style="color: #34c759;">437+</div>
+      <div class="kpi-hint" data-i18n="kpi.dau_hint">Active macOS clients in the last 24 hours</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">
+        <span data-i18n="kpi.mau">Monthly Active (MAU)</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="kpi-value" id="kpi-mau" style="color: #0a84ff;">1,394+</div>
+      <div class="kpi-hint" data-i18n="kpi.mau_hint">Deduplicated devices over past 30 days</div>
+    </div>
+  </section>
+
+  <!-- Apps Grid -->
+  <section class="apps-dash-grid">
+    <!-- Softfold -->
+    <article class="app-stat-panel" data-panel-app="softfold">
+      <div>
+        <div class="app-stat-head">
+          <img src="../icons/softfold.png" alt="Softfold icon">
+          <div class="app-stat-title">
+            <div class="app-stat-name-row">
+              <span class="app-stat-name">Softfold</span>
+              <span class="app-stat-badge-version" id="ver-softfold">v1.19</span>
+            </div>
+            <div class="app-stat-tagline">Close the lid, and your desktop folds away softly.</div>
+          </div>
+        </div>
+        <div class="app-metrics-list">
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dl-softfold">29,992</span>
+            <span class="app-metric-label" data-i18n="app.downloads">Downloads</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dau-softfold" style="color: #34c759;">437</span>
+            <span class="app-metric-label" data-i18n="app.dau">Today (DAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="wau-softfold">969</span>
+            <span class="app-metric-label" data-i18n="app.wau">7-Day (WAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="mau-softfold">1,394</span>
+            <span class="app-metric-label" data-i18n="app.mau">30-Day (MAU)</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-stat-actions">
+        <a class="app-stat-btn app-stat-btn-secondary" href="../softfold/" data-i18n="app.btn_web">Website</a>
+        <a class="app-stat-btn app-stat-btn-primary" href="https://github.com/ReffWu/softfold/releases/latest/download/Softfold.dmg" data-i18n="app.btn_download">Download</a>
+      </div>
+    </article>
+
+    <!-- TokNotch -->
+    <article class="app-stat-panel" data-panel-app="toknotch">
+      <div>
+        <div class="app-stat-head">
+          <img src="../icons/toknotch.png" alt="TokNotch icon">
+          <div class="app-stat-title">
+            <div class="app-stat-name-row">
+              <span class="app-stat-name">TokNotch</span>
+              <span class="app-stat-badge-version" id="ver-toknotch">v1.2.8</span>
+            </div>
+            <div class="app-stat-tagline">How many times over has each AI plan paid for itself?</div>
+          </div>
+        </div>
+        <div class="app-metrics-list">
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dl-toknotch">1,964</span>
+            <span class="app-metric-label" data-i18n="app.downloads">Downloads</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dau-toknotch">—</span>
+            <span class="app-metric-label" data-i18n="app.dau">Today (DAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="wau-toknotch">—</span>
+            <span class="app-metric-label" data-i18n="app.wau">7-Day (WAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="mau-toknotch">—</span>
+            <span class="app-metric-label" data-i18n="app.mau">30-Day (MAU)</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-stat-actions">
+        <a class="app-stat-btn app-stat-btn-secondary" href="../toknotch/" data-i18n="app.btn_web">Website</a>
+        <a class="app-stat-btn app-stat-btn-primary" href="https://github.com/ReffWu/toknotch/releases/latest/download/TokNotch.dmg" data-i18n="app.btn_download">Download</a>
+      </div>
+    </article>
+
+    <!-- Squeeze -->
+    <article class="app-stat-panel" data-panel-app="squeeze">
+      <div>
+        <div class="app-stat-head">
+          <img src="../icons/squeeze.png" alt="Squeeze icon">
+          <div class="app-stat-title">
+            <div class="app-stat-name-row">
+              <span class="app-stat-name">Squeeze</span>
+              <span class="app-stat-badge-version" id="ver-squeeze">v1.1</span>
+            </div>
+            <div class="app-stat-tagline">Zero-loss extreme video compressor for macOS.</div>
+          </div>
+        </div>
+        <div class="app-metrics-list">
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dl-squeeze">New</span>
+            <span class="app-metric-label" data-i18n="app.downloads">Downloads</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dau-squeeze">—</span>
+            <span class="app-metric-label" data-i18n="app.dau">Today (DAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="wau-squeeze">—</span>
+            <span class="app-metric-label" data-i18n="app.wau">7-Day (WAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="mau-squeeze">—</span>
+            <span class="app-metric-label" data-i18n="app.mau">30-Day (MAU)</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-stat-actions">
+        <a class="app-stat-btn app-stat-btn-secondary" href="../squeeze/" data-i18n="app.btn_web">Website</a>
+        <a class="app-stat-btn app-stat-btn-primary" href="https://reffwu.github.io/apps/squeeze/Squeeze.dmg" data-i18n="app.btn_download">Download</a>
+      </div>
+    </article>
+
+    <!-- Stoop -->
+    <article class="app-stat-panel" data-panel-app="stoop">
+      <div>
+        <div class="app-stat-head">
+          <img src="../icons/stoop.png" alt="Stoop icon">
+          <div class="app-stat-title">
+            <div class="app-stat-name-row">
+              <span class="app-stat-name">Stoop</span>
+              <span class="app-stat-badge-version" id="ver-stoop">Preview</span>
+            </div>
+            <div class="app-stat-tagline">Calm, tactile desktop organizer and Dock companion.</div>
+          </div>
+        </div>
+        <div class="app-metrics-list">
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dl-stoop">Preview</span>
+            <span class="app-metric-label" data-i18n="app.downloads">Downloads</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dau-stoop">—</span>
+            <span class="app-metric-label" data-i18n="app.dau">Today (DAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="wau-stoop">—</span>
+            <span class="app-metric-label" data-i18n="app.wau">7-Day (WAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="mau-stoop">—</span>
+            <span class="app-metric-label" data-i18n="app.mau">30-Day (MAU)</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-stat-actions">
+        <a class="app-stat-btn app-stat-btn-secondary" href="https://github.com/ReffWu/stoop" target="_blank" rel="noopener" data-i18n="app.btn_github">GitHub</a>
+        <a class="app-stat-btn app-stat-btn-primary" href="https://github.com/ReffWu/stoop/releases" target="_blank" rel="noopener">Releases</a>
+      </div>
+    </article>
+
+    <!-- Status Trio -->
+    <article class="app-stat-panel" data-panel-app="statustrio">
+      <div>
+        <div class="app-stat-head">
+          <img src="../icons/statustrio.png" alt="Status Trio icon">
+          <div class="app-stat-title">
+            <div class="app-stat-name-row">
+              <span class="app-stat-name">Status Trio</span>
+              <span class="app-stat-badge-version" id="ver-statustrio">v1.1.0</span>
+            </div>
+            <div class="app-stat-tagline">Three system stats in one ring (lingyired & Reff).</div>
+          </div>
+        </div>
+        <div class="app-metrics-list">
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dl-statustrio">4</span>
+            <span class="app-metric-label" data-i18n="app.downloads">Downloads</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="dau-statustrio">—</span>
+            <span class="app-metric-label" data-i18n="app.dau">Today (DAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="wau-statustrio">—</span>
+            <span class="app-metric-label" data-i18n="app.wau">7-Day (WAU)</span>
+          </div>
+          <div class="app-metric-item">
+            <span class="app-metric-num" id="mau-statustrio">—</span>
+            <span class="app-metric-label" data-i18n="app.mau">30-Day (MAU)</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-stat-actions">
+        <a class="app-stat-btn app-stat-btn-secondary" href="../statustrio/" data-i18n="app.btn_web">Website</a>
+        <a class="app-stat-btn app-stat-btn-primary" href="https://github.com/lingyired/status-trio" target="_blank" rel="noopener" data-i18n="app.btn_github">GitHub</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Privacy by Design card -->
+  <section class="privacy-card">
+    <h3 data-i18n="privacy.title">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #34c759;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Privacy by Design · Apple HIG & European GDPR Strict Compliance
+    </h3>
+    <p data-i18n="privacy.body">Zero IP persistence. Daily rotated cryptographic salt. No telemetry cookies or personal identifiers. Every macOS app is signed and notarized by Apple with full user consent controls in Settings.</p>
+  </section>
+</main>
+
+<footer>
+  <a href="../">← Mac apps by Reff Wu</a> · © 2026 Reff Wu
+</footer>
+
+<script>
+function renderDashboardMetrics(data) {
+  if (!data) return;
+  if (data.totals) {
+    const kpiTotalDl = document.getElementById("kpi-total-dl");
+    const kpiDau = document.getElementById("kpi-dau");
+    const kpiMau = document.getElementById("kpi-mau");
+    if (kpiTotalDl) kpiTotalDl.textContent = (data.totals.downloads || 0).toLocaleString() + "+";
+    if (kpiDau) kpiDau.textContent = (data.totals.active_today || 0).toLocaleString();
+    if (kpiMau) kpiMau.textContent = (data.totals.active_30d || 0).toLocaleString();
+  }
+
+  if (data.updated_at) {
+    const syncTime = document.getElementById("sync-time");
+    if (syncTime) {
+      try {
+        const d = new Date(data.updated_at);
+        syncTime.textContent = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      } catch (_) {
+        syncTime.textContent = "Just now";
+      }
+    }
+  }
+
+  if (data.apps) {
+    for (const [id, app] of Object.entries(data.apps)) {
+      const dlEl = document.getElementById(`dl-${id}`);
+      const dauEl = document.getElementById(`dau-${id}`);
+      const wauEl = document.getElementById(`wau-${id}`);
+      const mauEl = document.getElementById(`mau-${id}`);
+      const verEl = document.getElementById(`ver-${id}`);
+
+      if (dlEl && app.downloads !== undefined) {
+        dlEl.textContent = app.downloads > 0 ? app.downloads.toLocaleString() : (id === 'stoop' ? 'Preview' : (app.latest_version ? 'Latest' : '—'));
+      }
+      if (dauEl && app.active_today !== undefined) {
+        dauEl.textContent = app.active_today > 0 ? app.active_today.toLocaleString() : '—';
+      }
+      if (wauEl && app.active_7d !== undefined) {
+        wauEl.textContent = app.active_7d > 0 ? app.active_7d.toLocaleString() : '—';
+      }
+      if (mauEl && app.active_30d !== undefined) {
+        mauEl.textContent = app.active_30d > 0 ? app.active_30d.toLocaleString() : '—';
+      }
+      if (verEl && app.latest_version) {
+        verEl.textContent = app.latest_version;
+      }
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const refreshBtn = document.getElementById("refresh-btn");
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", async () => {
+      refreshBtn.classList.add("spinning");
+      try {
+        if (typeof window.REFRESH_STATS === "function") {
+          const fresh = await window.REFRESH_STATS();
+          renderDashboardMetrics(fresh);
+        }
+      } finally {
+        setTimeout(() => refreshBtn.classList.remove("spinning"), 500);
+      }
+    });
+  }
+
+  if (window.__APP_STATS__) {
+    renderDashboardMetrics(window.__APP_STATS__);
+  } else {
+    fetch("https://softfold-telemetry.reffwu.workers.dev/api/public-stats")
+      .then(res => res.json())
+      .then(data => renderDashboardMetrics(data))
+      .catch(() => {});
+  }
+});
+</script>
+</body>
+</html>
