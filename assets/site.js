@@ -98,10 +98,8 @@
     if (!pill) {
       const cta = document.querySelector(".cta");
       if (!cta) return;
-      pill = document.createElement("a");
+      pill = document.createElement("div");
       pill.className = "stat-pill";
-      pill.href = `${root}dashboard/`;
-      pill.title = "View Telemetry Dashboard";
       const dot = document.createElement("span");
       dot.className = "live-dot";
       dot.setAttribute("aria-hidden", "true");
@@ -109,6 +107,9 @@
       text.className = "stat-text";
       pill.append(dot, text);
       cta.append(pill);
+    } else if (pill.tagName === "A") {
+      pill.removeAttribute("href");
+      pill.removeAttribute("title");
     }
 
     if (cachedStats && cachedStats.apps && cachedStats.apps[currentApp]) {
@@ -172,24 +173,18 @@
     const select = navShell.querySelector(".lang");
     if (!select) return;
 
-    if (!navShell.querySelector(".nav-actions")) {
+    const isDashboard = document.body.dataset.page === "dashboard";
+    const root = document.body.dataset.root || "";
+
+    if (isDashboard && !navShell.querySelector(".nav-actions")) {
       const actions = document.createElement("div");
       actions.className = "nav-actions";
-      const isDashboard = document.body.dataset.page === "dashboard";
-      const root = document.body.dataset.root || "";
-      
-      const statLink = document.createElement("a");
-      statLink.className = "nav-stat-link";
-      if (isDashboard) {
-        statLink.href = `${root}`;
-        statLink.innerHTML = `<span aria-hidden="true">←</span> <span>Apps</span>`;
-      } else {
-        statLink.href = `${root}dashboard/`;
-        statLink.innerHTML = `<span class="live-dot" aria-hidden="true"></span> <span data-i18n="stats.live">${strings["stats.live"][lang] || "Live Stats"}</span>`;
-      }
-      
+      const backLink = document.createElement("a");
+      backLink.className = "nav-stat-link";
+      backLink.href = `${root}`;
+      backLink.innerHTML = `<span aria-hidden="true">←</span> <span>Apps</span>`;
       select.parentNode.insertBefore(actions, select);
-      actions.append(statLink, select);
+      actions.append(backLink, select);
     }
 
     select.textContent = "";
