@@ -100,6 +100,31 @@
         "vi": "Ba trạng thái hệ thống trong một biểu tượng menu. Mã nguồn mở của lingyired, đóng góp bởi Reff.",
         "ar": "ثلاث حالات للنظام في شريط القوائم. مفتوح المصدر بواسطة lingyired ومساهمة Reff."
       }
+    },
+    {
+      "id": "magpulse",
+      "bundleID": "com.reffwu.magpulse",
+      "name": "MagPulse",
+      "icon": "https://reffwu.github.io/apps/icons/magpulse.png",
+      "page": "https://reffwu.github.io/apps/magpulse/",
+      "tagline": {
+        "en": "Physical MagSafe light pulse for your Mac's AI agents.",
+        "zh-Hans": "MagSafe 硬件呼吸灯，全 Mac 的 AI Agent 律动触手可及。",
+        "zh-Hant": "MagSafe 硬體呼吸燈，全 Mac 的 AI Agent 律動觸手可及。",
+        "ja": "Mac の AI エージェントの脈動を、MagSafe の光で物理的に可視化。",
+        "ko": "Mac 의 AI 에이전트 활동을 MagSafe 물리 라이트 펄스로.",
+        "de": "Physischer MagSafe-Lichtimpuls für die KI-Agenten deines Macs.",
+        "fr": "Impulsion lumineuse MagSafe physique pour les agents IA de votre Mac.",
+        "es": "Pulso de luz MagSafe físico para los agentes de IA de tu Mac.",
+        "it": "Impulso luminoso MagSafe fisico per gli agenti IA del tuo Mac.",
+        "pt-BR": "Pulso de luz MagSafe físico para os agentes de IA do seu Mac.",
+        "nl": "Fysieke MagSafe-lichtpuls voor de AI-agents van je Mac.",
+        "pl": "Fizyczny impuls świetlny MagSafe dla agentów AI na Macu.",
+        "ru": "Физический световой пульс MagSafe для ИИ-агентов на вашем Mac.",
+        "tr": "Mac'inizdeki yapay zekâ ajanları için fiziksel MagSafe ışık nabzı.",
+        "vi": "Xung ánh sáng MagSafe vật lý cho các trợ lý AI trên máy Mac của bạn.",
+        "ar": "نبض ضوء MagSafe المادي لوكلاء الذكاء الاصطناعي على جهاز Mac الخاص بك."
+      }
     }
   ]
 }

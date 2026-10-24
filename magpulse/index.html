@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MagPulse · Physical MagSafe pulse for your Mac's AI agents</title>
+<meta name="description" content="Physical MagSafe dual-color pulse for Antigravity, Claude Code, Codex, ChatGPT and Xcode.">
+<link rel="icon" href="../icons/magpulse.png">
+<link rel="stylesheet" href="../assets/site.css">
+<script>window.PAGE_STRINGS = {
+  "page.title": {
+    "en": "MagPulse · Physical MagSafe pulse for your Mac's AI agents",
+    "zh-Hans": "MagPulse · MagSafe 硬件呼吸灯，全 Mac 的 AI Agent 律动触手可及",
+    "zh-Hant": "MagPulse · MagSafe 硬體呼吸燈，全 Mac 的 AI Agent 律動觸手可及",
+    "ja": "MagPulse · Mac の AI エージェントの脈動を、MagSafe の光で物理的に可視化",
+    "ko": "MagPulse · Mac의 AI 에이전트 활동을 MagSafe 물리 라이트 펄스로",
+    "fr": "MagPulse · Impulsion lumineuse MagSafe pour les agents IA de votre Mac",
+    "es": "MagPulse · Pulso físico MagSafe para los agentes de IA de tu Mac",
+    "it": "MagPulse · Impulso luminoso MagSafe fisico per gli agenti IA del tuo Mac",
+    "tr": "MagPulse · Mac'inizdeki yapay zekâ ajanları için fiziksel MagSafe ışık nabzı",
+    "pl": "MagPulse · Fizyczny impuls świetlny MagSafe dla agentów AI na Macu",
+    "nl": "MagPulse · Fysieke MagSafe-lichtpuls voor de AI-agents van je Mac"
+  },
+  "tagline": {
+    "en": "Physical MagSafe light pulse for your Mac's AI agents.",
+    "zh-Hans": "MagSafe 硬件呼吸灯，全 Mac 的 AI Agent 律动触手可及。",
+    "zh-Hant": "MagSafe 硬體呼吸燈，全 Mac 的 AI Agent 律動觸手可及。",
+    "ja": "Mac の AI エージェントの脈動を、MagSafe の光で物理的に可視化。",
+    "ko": "Mac의 AI 에이전트 활동을 MagSafe 물리 라이트 펄스로.",
+    "fr": "Impulsion lumineuse MagSafe physique pour les agents IA de votre Mac.",
+    "es": "Pulso de luz MagSafe físico para los agentes de IA de tu Mac.",
+    "it": "Impulso luminoso MagSafe fisico per gli agenti IA del tuo Mac.",
+    "tr": "Mac'inizdeki yapay zekâ ajanları için fiziksel MagSafe ışık nabzı.",
+    "pl": "Fizyczny impuls świetlny MagSafe dla agentów AI na Macu.",
+    "nl": "Fysieke MagSafe-lichtpuls voor de AI-agents van je Mac."
+  },
+  "lede": {
+    "en": "Map thinking, waiting and completion across Antigravity, Claude Code, Codex, ChatGPT and Xcode to MacBook physical dual-color LED pulses.",
+    "zh-Hans": "将 Antigravity、Claude Code、Codex、ChatGPT 与 Xcode 的思考、等待与完成，映射为 MacBook 实体硬件双色光影脉冲。",
+    "zh-Hant": "將 Antigravity、Claude Code、Codex、ChatGPT 與 Xcode 的思考、等待與完成，映射為 MacBook 實體硬體雙色光影脈衝。",
+    "ja": "Antigravity、Claude Code、Codex、ChatGPT、Xcode の思考・待機・完了を MacBook 側面の MagSafe LED に連動。",
+    "ko": "Antigravity, Claude Code, Codex, ChatGPT, Xcode의 연산, 대기, 완료 상태를 MacBook 물리 MagSafe LED로 실시간 전달합니다."
+  },
+  "requires": {
+    "en": "Requires a MacBook with MagSafe 3 (Apple Silicon) and macOS 14 or later.",
+    "zh-Hans": "需要配备 MagSafe 3 接口的 MacBook (Apple Silicon)，macOS 14 或更新版本。",
+    "zh-Hant": "需要配備 MagSafe 3 接口的 MacBook (Apple Silicon)，macOS 14 或更新版本。",
+    "ja": "MagSafe 3 ポートを搭載した MacBook (Apple Silicon) と macOS 14 以降が必要です。",
+    "ko": "MagSafe 3 포트가 탑재된 MacBook(Apple Silicon) 및 macOS 14 이상이 필요합니다."
+  },
+  "f0.title": {
+    "en": "Physical Hardware Pulse",
+    "zh-Hans": "实体硬件物理光感",
+    "zh-Hant": "實體硬體物理光感",
+    "ja": "ハードウェア物理パルス",
+    "ko": "물리 하드웨어 광 감각"
+  },
+  "f0.body": {
+    "en": "Glance at the left edge of your Mac without switching windows. Amber breathing while computing, emerald green on done, amber pulse on user permission required.",
+    "zh-Hans": "无需频繁切屏查看。机身左侧的 MagSafe 磁吸灯直观呼吸闪烁：运算中琥珀呼吸，完成时翠绿常亮，权限等待时黄绿脉冲。",
+    "zh-Hant": "無需頻繁切屏查看。機身左側的 MagSafe 磁吸燈直觀呼吸閃爍：運算中琥珀呼吸，完成時翠綠常亮，權限等待時黃綠脈衝。",
+    "ja": "画面を切り替えずに視界の端で把握。思考中は琥珀色に呼吸し、完了時は鮮やかな緑色で点灯、確認待機時はパルス発光。",
+    "ko": "화면을 전환하지 않고도 즉시 확인. 연산 중에는 호박색 숨쉬기, 완료 시 에메랄드 그린 상시 점등, 권한 대기 시 맥박 점멸."
+  },
+  "f1.title": {
+    "en": "Apps & CLI Unified",
+    "zh-Hans": "桌面客户端与命令行双模",
+    "zh-Hant": "桌面客戶端與命令行雙模",
+    "ja": "アプリと CLI の完全統合",
+    "ko": "데스크톱 앱과 CLI 통합"
+  },
+  "f1.body": {
+    "en": "Seamlessly monitors both desktop clients (Antigravity, ChatGPT, Claude, Cursor) and terminal commands (Claude Code, Codex) with sub-second accuracy.",
+    "zh-Hans": "无论是桌面 App（Antigravity、ChatGPT、Claude、Cursor、VSCode）还是终端命令（Claude Code、CodeX），毫秒级感知，告别盲目等待。",
+    "zh-Hant": "無論是桌面 App（Antigravity、ChatGPT、Claude、Cursor、VSCode）還是終端命令（Claude Code、CodeX），毫秒級感知，告別盲目等待。",
+    "ja": "デスクトップアプリ (Antigravity, ChatGPT, Claude) もターミナル CLI (Claude Code, Codex) もミリ秒単位で高精度に検知。",
+    "ko": "데스크톱 앱(Antigravity, ChatGPT, Claude)부터 터미널 CLI(Claude Code, Codex)까지 밀리초 단위로 정확히 감지합니다."
+  },
+  "f2.title": {
+    "en": "Native & Strictly Local",
+    "zh-Hans": "本地原生，零网络依赖",
+    "zh-Hant": "本地原生，零網路依賴",
+    "ja": "完全ローカル・プライバシー最優先",
+    "ko": "완전 로컬 네이티브 보안"
+  },
+  "f2.body": {
+    "en": "Drives Apple SMC hardware directly. Reads local activity logs only. Zero cloud dependency, zero data leaves your Mac.",
+    "zh-Hans": "原生驱动 Apple SMC 微控制器，仅审计本机已有会话日志。无需联网，数据 100% 不出本机，原生极简无负担。",
+    "zh-Hant": "原生驅動 Apple SMC 微控制器，僅審計本機已有會話日誌。無需聯網，資料 100% 不出本機，原生極簡無負擔。",
+    "ja": "Apple SMC を直接制御。ローカルのログのみを参照し、ネットワーク通信は一切不要。データは端末内に留まります。",
+    "ko": "Apple SMC 하드웨어를 직접 제어하며 로컬 활동만 읽습니다. 외부 통신이 전혀 없어 데이터가 Mac 밖으로 나가지 않습니다."
+  }
+};</script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body data-app="magpulse" data-root="../">
+<nav><div class="shell"><a class="brand" href="../">Reff Wu</a><select class="lang" aria-label="Language"></select></div></nav>
+<main class="shell">
+  <section class="hero">
+    <img class="icon" src="../icons/magpulse.png" alt="MagPulse" width="128" height="128">
+    <h1>MagPulse</h1>
+    <p class="tagline" data-i18n="tagline">Physical MagSafe light pulse for your Mac's AI agents.</p>
+    <p class="lede" data-i18n="lede">Map thinking, waiting and completion across Antigravity, Claude Code, Codex, ChatGPT and Xcode to MacBook physical dual-color LED pulses.</p>
+    <div class="cta">
+      <div class="cta-row">
+        <a class="download" href="https://github.com/ReffWu/magpulse/releases/latest/download/MagPulse.dmg"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10m-4.5-4.5L10 13l4.5-4.5M4 17h12"/></svg><span data-i18n="download">Download for Mac</span></a>
+        <a class="github-btn" href="https://github.com/ReffWu/magpulse" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+      </div>
+      <span class="fine" data-i18n="fine">Free · macOS 14 or later · Signed and notarized by Apple</span>
+    </div>
+  </section>
+  <figure class="shot"><img data-hero="hero" src="hero-en.webp" alt="MagPulse"></figure>
+  <section class="features">
+    <div class="feature"><h3 data-i18n="f0.title">Physical Hardware Pulse</h3><p data-i18n="f0.body">Glance at the left edge of your Mac without switching windows. Amber breathing while computing, emerald green on done, amber pulse on user permission required.</p></div>
+    <div class="feature"><h3 data-i18n="f1.title">Apps & CLI Unified</h3><p data-i18n="f1.body">Seamlessly monitors both desktop clients (Antigravity, ChatGPT, Claude, Cursor) and terminal commands (Claude Code, Codex) with sub-second accuracy.</p></div>
+    <div class="feature"><h3 data-i18n="f2.title">Native & Strictly Local</h3><p data-i18n="f2.body">Drives Apple SMC hardware directly. Reads local activity logs only. Zero cloud dependency, zero data leaves your Mac.</p></div>
+  </section>
+  <p class="requires" data-i18n="requires">Requires a MacBook with MagSafe 3 (Apple Silicon) and macOS 14 or later.</p>
+  <section class="more" data-more hidden>
+    <h2 data-i18n="more">More from Reff Wu</h2>
+    <div class="grid" data-apps></div>
+  </section>
+</main>
+<footer><a href="https://github.com/ReffWu/magpulse" data-i18n="source">Source on GitHub</a> · © 2026 Reff Wu</footer>
+</body>
+</html>
