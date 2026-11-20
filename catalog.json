@@ -130,7 +130,7 @@
       "id": "pixelmirror",
       "bundleID": "com.reffwu.pixelmirror",
       "name": "PixelMirror",
-      "icon": "https://reffwu.github.io/apps/icons/pixelmirror.png",
+      "icon": "https://reffwu.github.io/apps/icons/pixelmirror.png?v=2",
       "page": "https://reffwu.github.io/apps/pixelmirror/",
       "tagline": {
         "en": "Your Android phone, live on your Mac.",
