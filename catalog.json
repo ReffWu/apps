@@ -125,6 +125,31 @@
         "vi": "Xung ánh sáng MagSafe vật lý cho các trợ lý AI trên máy Mac của bạn.",
         "ar": "نبض ضوء MagSafe المادي لوكلاء الذكاء الاصطناعي على جهاز Mac الخاص بك."
       }
+    },
+    {
+      "id": "pixelmirror",
+      "bundleID": "com.reffwu.pixelmirror",
+      "name": "PixelMirror",
+      "icon": "https://reffwu.github.io/apps/icons/pixelmirror.png",
+      "page": "https://reffwu.github.io/apps/pixelmirror/",
+      "tagline": {
+        "en": "Your Android phone, live on your Mac.",
+        "zh-Hans": "你的安卓手机，实时出现在 Mac 上。",
+        "zh-Hant": "你的 Android 手機，即時出現在 Mac 上。",
+        "ja": "Android スマホを、Mac でそのまま。",
+        "ko": "Android 폰을 Mac에서 그대로.",
+        "de": "Dein Android‑Handy, live auf deinem Mac.",
+        "fr": "Votre Android, en direct sur votre Mac.",
+        "es": "Tu Android, en vivo en tu Mac.",
+        "it": "Il tuo Android, dal vivo sul tuo Mac.",
+        "pt-BR": "Seu Android, ao vivo no seu Mac.",
+        "nl": "Je Android‑telefoon, live op je Mac.",
+        "pl": "Twój Android na żywo na Macu.",
+        "ru": "Ваш Android — прямо на Mac.",
+        "tr": "Android telefonunuz, Mac'inizde canlı.",
+        "vi": "Điện thoại Android của bạn, trực tiếp trên Mac.",
+        "ar": "هاتف أندرويد الخاص بك، مباشرةً على Mac."
+      }
     }
   ]
 }
